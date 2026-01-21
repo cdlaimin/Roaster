@@ -152,6 +152,10 @@
                     )
                 ;;
             esac
+            # Known issue:
+            # - NCCL does not run ldconfig after installation.
+            #   https://github.com/NVIDIA/nccl/issues/1991
+            ldconfig
             ldconfig -p | grep libcudnn
             ldconfig -p | grep libnvinfer
             ldconfig -p | grep libnccl
