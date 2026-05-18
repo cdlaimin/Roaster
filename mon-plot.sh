@@ -4,7 +4,7 @@ set -e
 
 for cmd in grep hostname journalctl jq python3 sed; do
     ! which "$cmd" >/dev/null || continue
-    printf '\033[31m[ERROR] Missing command "$s".\033[0m\n' "$cmd" >&2
+    printf '\033[31m[ERROR] Missing command "%s".\033[0m\n' "$cmd" >&2
     exit 1
 done
 
